@@ -80,23 +80,23 @@ public class SimulatedNewsSection1 {
         if (lastNewlineIndex!=-1) {
              return news.substring(lastNewlineIndex + 1);
         }else{
-        return ""; 
+        return""; 
     }
 }
 
     public static int compareDates(String date1, String date2) {
     SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
     try {
-        Date d1 = sdf.parse(date1);
-        Date d2 = sdf.parse(date2);
-        if (d1.before(d2)) {
+        Date d1=sdf.parse(date1);
+        Date d2=sdf.parse(date2);
+        if(d1.before(d2)){
             return 1;
-        } else if (d1.after(d2)) {
+        }else if(d1.after(d2)){
             return -1;
-        } else {
+        }else{
             return 0;
         }
-    } catch (ParseException e) {
+    }catch(ParseException e){
         e.printStackTrace();
     }
     return 0;
